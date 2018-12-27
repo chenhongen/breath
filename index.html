@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Breathing Light</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+    @keyframes breath {
+      0% {
+          opacity: .2;
+      }
+      70% {
+          opacity: 1;
+      }
+      100% {
+          opacity: .2;
+      }
+    }
+
+    .bg-center {
+      text-align: center;
+      position: absolute;
+      top: 0;
+      z-index: 1;
+    }
+    .bg-center img {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+    .breathingLampImage {
+      animation: breath 3s infinite ease-in-out alternate;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-center">
+    <img src="bg.png" />
+    <img src="bg-ahead.png" class="breathingLampImage"/>
+  </div>
+</body>
+</html>
