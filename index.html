@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Breathing Light</title>
+  <link href="//at.alicdn.com/t/font_1256782_sph3z2b13v.css" rel="stylesheet" type="text/css" /> 
   <style>
     body {
       margin: 0;
@@ -37,9 +38,66 @@
     .breathingLampImage {
       animation: breath 3s infinite ease-in-out alternate;
     }
+
+
+  /*竖屏*/
+  @media only screen and (orientation:portrait) {
+    .bg-center {
+      display: none;
+    }
+    /* body:after{ content:"现在是竖屏"; width:100%; height:100%; text-align:center; display:flex; align-items:center; justify-content:center;} */
+    #tip {
+      display: inline-block;
+      width: 200px;
+      height: 200px;
+      background: #777676;
+      border-radius: 20px;
+      text-align:center;
+      margin: auto;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+    .iconfont {
+      font-size: 100px;
+      color: #FFF;
+      top: 40px;
+      position: relative;
+    }
+    body {
+      background: #5988df;
+    }
+  }
+  /*横屏*/
+  @media only screen and (orientation:landscape) {
+    #tip {
+      display: none;
+    }
+    .bg-center {
+      display: block;
+    }
+  }
   </style>
+  <script>
+    // 判断横屏展示时的状态
+    // var mql = window.matchMedia("(orientation: portrait)");
+    // function onMatchMeidaChange(mql){
+    //     if(mql.matches) {
+    //         // 竖屏
+    //         console.log(1);
+    //     }else {
+    //         // 横屏
+    //         console.log(2);
+    //     }
+    // }
+    // onMatchMeidaChange(mql);
+    // mql.addListener(onMatchMeidaChange);
+  </script>
 </head>
 <body>
+  <span id="tip"><i class="iconfont icon-shoujihengping"></i></span>
   <div class="bg-center">
     <img src="bg.png" />
     <img src="bg-ahead.png" class="breathingLampImage"/>
